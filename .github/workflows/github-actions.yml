@@ -7,9 +7,6 @@ on:
             - '*'
 jobs:
     unit-test:
-        container:
-          image: cuaesd/aesd-autotest:24-assignment1
-          options: --network aesd-network  # This tells Docker to use the specified network
         runs-on: self-hosted
         steps:
           - uses: actions/checkout@v2
@@ -18,9 +15,6 @@ jobs:
           - name: Run unit test
             run: ./unit-test.sh
     full-test:
-        container:
-          image: cuaesd/aesd-autotest:24-assignment1
-          options: --network aesd-network  # This tells Docker to use the specified network
         runs-on: self-hosted
         steps:
           - uses: actions/checkout@v2
